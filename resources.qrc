@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="/plugins/wfs_from_dera">
+    <file>Icons/Andalucia se mueve_plugin.png</file>
+    <file>Icons/LogoJuntaA_plugin.PNG</file>
+    <file>Icons/Andalucia se mueve.png</file>
+    <file>Icons/LogoJuntaA_20210423.PNG</file>
+    <file>icon.png</file>
+  </qresource>
+</RCC>
