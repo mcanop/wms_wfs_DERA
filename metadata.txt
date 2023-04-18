@@ -12,8 +12,8 @@ email=mcanop29@gmail.com
 
 about=Carga de los servicios wfs/wms de los Datos Espaciales de Referencia, eligiendo el tema y la capa concreta
 
-tracker=http://bugs
-repository=http://repo
+tracker=https://github.com/mcanop/wms_wfs_DERA
+repository=https://github.com/mcanop/wms_wfs_DERA
 # End of mandatory metadata
 
 # Recommended items:
@@ -25,7 +25,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=python
 
-homepage=http://homepage
+homepage=https://github.com/mcanop/wms_wfs_DERA
 category=Plugins
 icon=icon.png
 # experimental flag
