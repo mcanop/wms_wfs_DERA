@@ -260,6 +260,8 @@ class Wfs_DERA:
         self.dlg.checkBox_wms.setChecked(0)
         self.dlg.checkBox_wfs.setChecked(0)
 
+        
+
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed
@@ -305,8 +307,8 @@ class Wfs_DERA:
                 subnombre = nombre[indice_c + 2:]
                 layer.setName('{} ({})'.format(subnombre, crs))
 
-        else:
-            QMessageBox.information(None, "Datos Espaciales de Referencia de Andalucía", "Debe seleccionar Tema, Capa y al menos un tipo de servicio")
+            if self.dlg.checkBox_wms.checkState() == 0 and self.dlg.checkBox_wfs.checkState() == 0:
+                QMessageBox.information(None, "Datos Espaciales de Referencia de Andalucía", "Debe seleccionar Tema, Capa y al menos un tipo de servicio")
 
 
          # Do something useful here - delete the line containing pass and
