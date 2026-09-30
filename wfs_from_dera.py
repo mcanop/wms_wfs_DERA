@@ -28,35 +28,12 @@ from urllib import request, parse
 import sys
 
 # Import the PyQt and QGIS libraries
-from qgis.PyQt.QtCore import Qt
-# from PyQt5 import QtCore, QtGui, QtWidgets
-import os
-
-# from PyQt5.QtWidgets import QDialog
-
-try:
-    from qgis.core import Qgis
-    from PyQt5.QtCore import *
-    from PyQt5.QtGui import *
-    from PyQt5.QtWidgets import *
-    from PyQt5 import uic
-
-    QT_VERSION = 5
-    os.environ['QT_API'] = 'pyqt5'
-except:
-    from PyQt4.QtCore import *
-    from PyQt4.QtGui import *
-    from PyQt4 import uic
-    from qgis.core import QgsMapLayerRegistry
-
-    QT_VERSION = 4
-
 import os.path
+
+from qgis.PyQt.QtCore import Qt, QCoreApplication, QSettings, QTranslator
+from qgis.PyQt.QtGui import QIcon
+from qgis.PyQt.QtWidgets import QAction, QDialog, QMessageBox, QWidget
 from qgis.core import *
-
-# import resources
-from .resources import *
-
 
 from .wfs_from_dera_dialog import wfsfromderadialog
 from .listacapa import *
@@ -177,7 +154,7 @@ class Wfs_DERA:
         """
         # Create the dialog (after translation) and keep reference
         self.dlg = wfsfromderadialog()
-        self.dlg.setWindowFlags(Qt.WindowSystemMenuHint | Qt.WindowTitleHint)
+        self.dlg.setWindowFlags(Qt.WindowType.WindowSystemMenuHint | Qt.WindowType.WindowTitleHint)
 
         icon = QIcon(icon_path)
         action = QAction(icon, text, parent)
@@ -206,7 +183,7 @@ class Wfs_DERA:
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
 
-        icon_path = ':/plugins/wfs_from_dera/icon.png'
+        icon_path = os.path.join(self.plugin_dir, 'icon.png')
         self.add_action(
             icon_path,
             text=self.tr(u'wfs wms DERA'),
@@ -263,7 +240,7 @@ class Wfs_DERA:
         
 
         # Run the dialog event loop
-        result = self.dlg.exec_()
+        result = self.dlg.exec()
         # See if OK was pressed
         if result:
             if self.dlg.checkBox_wms.isChecked():

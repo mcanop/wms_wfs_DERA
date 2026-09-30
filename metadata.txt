@@ -5,6 +5,8 @@
 [general]
 name=Datos Espaciales de Referencia de Andalucía (DERA)
 qgisMinimumVersion=3.0
+qgisMaximumVersion=4.99
+supportsQt6=True
 description=Loading of wfs/wms services from DERA Spatial Reference Data.Carga de los servicios wfs/wms de los Datos Espaciales de Referencia DERA  
 version=0.2
 author=Manuel Cano
