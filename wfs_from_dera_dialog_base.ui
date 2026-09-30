@@ -174,7 +174,7 @@
   </connection>
   <connection>
    <sender>comboBox_tema</sender>
-   <signal>activated(QString)</signal>
+   <signal>activated(int)</signal>
    <receiver>Wfs_DERADialogBase</receiver>
    <slot>act_wms_wfs()</slot>
    <hints>
